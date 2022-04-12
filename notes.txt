@@ -1,0 +1,9 @@
+For linux: https://dlang. rg/articles/dll-linux.html#dso81 (might also work for windows)
+For windows: Runtime.loadlibrary
+
+To compile a cargo packackage to a dynamic library (.so / .dll), do: 
+    1. cargo rustc --release -- --crate-type=cdylib
+
+To compile C, d: 
+    1. gcc -c lib.c -o lib.o
+    2. gcc lib.o -shared -o lib.so
