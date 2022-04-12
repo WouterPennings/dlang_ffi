@@ -28,8 +28,7 @@ void* OpenDLL(scope const(char*) libName) {
 
 int main() {
     void* lh = OpenDLL("./rust_lib.so");
-    bonjour x = GetFunc(lh, "print");
-    x(cast(char*) "hello");
+    GetFunc(lh, "print")(cast(char*) "hello");
 
     return 0;
 }
